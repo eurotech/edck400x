@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<title>EDC Everyware Device Cloud</title>
+	<!--Load the CSS -->
+	<link type="text/css" href="css/overcast/jquery-ui-1.8.22.custom.css" rel="stylesheet" />
+	<link type="text/css" href="css/main.css" rel="stylesheet" />
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+
+    <!--<script src="js/jquery-1.11.2.min.js"></script>-->
+    <script src="js/Long.min.js"></script>
+    <script src="js/ByteBufferAB.min.js"></script>
+    <script src="js/ProtoBuf.min.js"></script>
+    <script src="js/mqttws31.js" type="text/javascript"></script>
+    <script src="js/jsxcompressor.min.js" type="text/javascript"></script>
+    <script src="js/demo.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.8.22.custom.min.js"></script>
+	<script type="text/javascript" src="js/base64.js"></script>
+
+	<script type='text/javascript' src="jquery/jquery.maphilight.min.js"></script>
+	<script type="text/javascript" src="jquery/jquery.atmosphere.js"></script>
+	<script type="text/javascript" src="jquery/getstreams.js"></script>
+
+    <script type="text/javascript" src="js/led.js"></script>
+	<script type="text/javascript" src="js/xml.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+
+</head>
+	<body>
+		<div id="container"  style="position: relative; width : 1300px; height: 600px; margin:0px auto; border-radius: 1em; background-color: #EEEEEE;">
+			<!-- 		<h1>Everyware Cloud</h1> -->
+			<div style="position: absolute; height : 3em; padding: 0.45em">
+				<img alt="" src="imagemap/EC_logo.5.png" >
+			</div>
+			<div id="logout"  style="position: absolute; left :1200px; top: 10px; font-size: 12px; color : blue; text-decoration:underline; cursor: hand; cursor: pointer; ">logout</div>
+
+			<div id="welcome_msg" style="position: absolute; left :1050px; top: 0px; font-size: 12px; color : black;">
+			<p></p>
+		</div>
+
+		<img src="imagemap/CLOUD_EDC.2.4.png" alt="" class="ui-widget-content ui-corner-all" style="position: absolute; top: 39px; left: 10px; border-radius: 1em; margin: 10px; padding: 4px 0;"/>
+		<br />
+		<div id="tabs" style="position: absolute; left: 25px; width: 500px; height: 530px;top: 49px; left: 690px;">
+			<ul>
+				<li><a href="#tabs-1">PLC inputs</a></li>
+				<!--<li><a href="#tabs-2">Quad Counter</a></li>-->
+				<li><a href="#tabs-4">Data Streams</a></li>
+			</ul>
+
+			<div id="tabs-1" >
+				<div class="portlet"style="height: 100px; width: 450px;">
+					<div class="portlet-header" >Counter</div>
+					<div  class="row" style="margin-left: 70px; padding: 8px; height: 100px; width: 125px;display: inline-block;">
+						<button id="reset_c3" style="position: absolute; top: 85px; left: 190px; height: 55px; width: 100px;display: inline-block;">Reset Counter</button>
+					</div>
+				</div>
+
+				<br />
+				<div  class="column">
+					<div class="portlet"style="height: 150px; width: 450px;">
+						<div class="portlet-header">Toggles</div>
+
+						<div  class="row" style="height: 150px; width: 120px;">
+							<table style="width:100%">
+								<tr>
+									<td><button id="reset_t4" style="position: relative; top: 30px; left: 65px; height: 55px; width: 100px;" disabled>Reset T4</button></td>
+									<td><button id="reset_t5" style="position: relative; top: 30px; left: 65px; height: 55px; width: 100px;" disabled>Reset T5</button></td>
+									<td><button id="reset_t6" style="position: relative; top: 30px; left: 65px; height: 55px; width: 100px;" disabled>Reset T6</button></td>
+								</tr>
+							</table>
+						</div>
+
+					</div>
+				</div>
+
+
+				<br />
+				<div class="portlet"style="height: 150px; width: 450px;">
+					<div class="portlet-header"> Quad Counter</div>
+					<center>
+						<div id="chart_gauge_qc">
+							<button id="reset_qc" style="position: relative; top: 30px; height: 55px; width: 150px;">Reset Quad Counter</button>
+						</div>
+					</center>
+				</div>
+			</div>
+<!--
+			<div id="tabs-2">
+				<div class="row">
+					<div class="portlet-header">Qc</div>
+					<center>
+						<div id="chart_line" class="portlet-content"></div>
+					</center>
+				</div>
+			</div>
+-->
+			<div id="tabs-4" style="overflow-y: scroll;height: 350px;">
+				<tr>
+					<td></td>
+					<td><input type="submit" id="getstreams" size="60" value="Get Streams" onclick="getStreams();" /></td>
+				</tr>
+				<div id="content_stream" style="font: Trebuchet MS ;font-size: 12px;"></div>
+				<div id="messages_stream" style="font: Trebuchet MS; font-size: 12px;"></div>
+			</div>
+		</div>
+
+		<button id="led1" class="ui-widget-content ui-corner-all"></button>
+		<button id="led2" class="ui-widget-content ui-corner-all"></button>
+		<button id="led3" class="ui-widget-content ui-corner-all"></button>
+		<button id="led4" class="ui-widget-content ui-corner-all"></button>
+		<button id="led4red" class="ui-widget-content ui-corner-all"></button>
+		<button id="led4green" class="ui-widget-content ui-corner-all"></button>
+		<button id="led4blue" class="ui-widget-content ui-corner-all"></button>
+
+		<div id="toggle4" class="ui-widget-content ui-corner-all" style="position: absolute; left: 285px; top: 330px;"></div>
+		<div id="toggle5" class="ui-widget-content ui-corner-all" style="position: absolute; left: 375px; top: 330px;"></div>
+		<div id="toggle6" class="ui-widget-content ui-corner-all" style="position: absolute; left: 464px; top: 330px;"></div>
+		<div class="c3-text"></div>
+		<div class="qc-text"></div>
+
+		<div id="dialog" title="Everyware Cloud Login">
+			<div id="form">
+				<br />
+				<table>
+					<tr>
+					<tr>
+					<tr>
+						<td>Username:</td>
+						<td><input type="text" id="username" size="30" value="username" /></td>
+					<tr>
+					<tr>
+						<td>Password:</td>
+						<td><input type="password" id="password" size="30" value="password" /></td>
+					<tr>
+					<tr>
+						<td>Client ID:</td>
+						<td><input type="text" id="clientID" size="30" value="00:00:00:00:00:00" /></td>
+					<tr>
+					<tr>
+						<td>Asset Name:</td>
+						<td><input type="text" id="getAssetName" size="30" value="assetName"/></td>
+					<tr>
+				</table>
+			</div>
+		</div>
+
+	</body>
+</html>
