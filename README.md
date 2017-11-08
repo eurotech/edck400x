@@ -26,6 +26,11 @@ When installed, the ESF local Configuration UI should look like this:
 12. Click on **Apply** and check the logs and cloud platform that the data is correctly published.
     ![ESF-resulting-graph](readme-images/ModbusWires.png)
 
+## Pre-Configured Snapshot
+A snapshot is available [here](Snapshots/devkitSnapshot.xml) 
+When loaded, creates the all the drivers, assets and the needed wire graph for this example.
+A pre-requisite is to have the modbus dp installed from the Eclipse Marketplace.
+
 ## Hosted Dashboard
 The DevKit Dashboard is available in hosted version at the following URL: https://devkit-wires.everyware-cloud.com
 
