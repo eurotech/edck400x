@@ -29,6 +29,33 @@ When installed, the ESF local Configuration UI should look like this:
 ## Hosted Dashboard
 The DevKit Dashboard is available in hosted version at the following URL: https://devkit-wires.everyware-cloud.com
 
+## How to use
+When accessing to the dashboard locally or from the remote hosted version, the user will be prompted to login specifying:
+
+- username;
+- password;
+- client id;
+- asset name.
+
+![Dashboard-splash-page](readme-images/Dashboard-splash.png)
+
+After setting the proper data, by clicking the `login` button, 
+
+![Dashboard-login](readme-images/Dashboard-login.png)
+
+the user will be redirected to the DevKit dashboard.
+
+![Dashboard-access-ok](readme-images/Dashboard-access.png)
+
+The PLC Inputs are connected to Everyware Cloud Sandbox instance using Web Sockets. They change their state depending on the user interaction with the 
+PLC Toggles and Counters.
+
+The LEDs displayed in the middle of the dashboard allow to perform an interaction from the dashboard to the real LEDs of the DevKit.
+When the user clicks on the Dashboard LEDs a REST API call is performed determining a request to the gateway and the real corresponding LED to light up.
+
+![Dashboard-interaction](readme-images/Dashboard-interaction.png)
+
+
 ### Supported browsers
 The dashboard works with Google Chrome and Mozilla Firefox.
 The dashboard is also compatible with Apple Safari, but it needs the user to select the `Disable Local File Restrictions` option in the Develop menu.
