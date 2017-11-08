@@ -93,7 +93,8 @@ function WebSocketConnect() {
         userName: user,
         password: password,
         onSuccess: onConnect,
-        onFailure: onFailToConnect
+        onFailure: onFailToConnect,
+        useSSL: true
     }
     );
 
@@ -180,7 +181,7 @@ function doDemo(username, usrPassword, clientID, assetName) {
     password = usrPassword;
     GatewayName = clientID;
     AppId = 'W1/A1/' + assetName;
-    client = new Paho.MQTT.Client(MQTTBrokerIP, 8080, "ClientDashboard-" + GatewayName);
+    client = new Paho.MQTT.Client(MQTTBrokerIP, 443, "ClientDashboard-" + GatewayName);
 
     WebSocketConnect();
 
