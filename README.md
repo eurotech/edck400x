@@ -27,4 +27,8 @@ When installed, the ESF local Configuration UI should look like this:
     ![ESF-resulting-graph](readme-images/ModbusWires.png)
 
 ## Hosted Dashboard
-https://devkit-wires.everyware-cloud.com
+The DevKit Dashboard is available in hosted version at the following URL: https://devkit-wires.everyware-cloud.com
+
+### Supported browsers
+The dashboard works with Google Chrome and Mozilla Firefox.
+The dashboard is also compatible with Apple Safari, but it needs the user to select the `Disable Local File Restrictions` option in the Develop menu.
