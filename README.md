@@ -1,4 +1,31 @@
 # EDC DevKit 4001
+## Overview
+
+The EDCK 4001 is a Development Kit for Everyware Device Cloud that provides a learning enviroment and a testbed for IoT/M2M applications; 
+it targets professional developers with an Embedded, IT or OT background. 
+
+![Devkit](readme-images/first.jpg)
+
+The kit is composed by: 
+
+1. An Eurotech Gateway like the Eurotech ReliaGATE 10-11 or ReliaGATE 20-25.
+
+2. Power supply
+
+![Power](readme-images/second.jpg)
+
+3. A Demo Board
+
+![Demo Board](readme-images/third.jpg)
+
+4. A PLC
+
+![PLC](readme-images/fourth.jpg)
+
+Before powering up the DevKit, please verify that the serial connector from the Gateway to the PLC is plugged in the PLC **Port 2** as depicted in the following image:
+
+![Serial connection to PLC](readme-images/PLC_serial_conn.jpg)
+
 ## Gateway Configuration
 The Gateway configuration requires the following steps:
 1. Install the latest version of ESF. You can download it from [here](http://www.eurotech.com/download/en/pb.aspx?pg=ESF)
