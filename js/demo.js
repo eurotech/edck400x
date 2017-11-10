@@ -103,20 +103,19 @@ function WebSocketConnect() {
         var topic = accountName + "/" + GatewayName + "/" + AppId + "/#";
         client.subscribe(topic);
         console.log("Subscribed to topic: " + topic);
-    }
-    ;
+    };
 
     function onFailToConnect(info) {
         console.log("Failed to connect: code=" + info.errorCode + ", msg=" + info.errorMessage);
-    }
-    ;
+        window.alert("Fail to connect! Please reload the page.");
+    };
 
     function onConnectionLost(responseObject) {
         if (responseObject.errorCode !== 0) {
             console.log("onConnectionLost:" + responseObject.errorMessage);
+            window.alert("Connection lost! Please reload the page.");
         }
-    }
-    ;
+    };
 
     function onMessageArrived(message) {
         var topic = message.destinationName;
