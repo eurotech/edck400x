@@ -14,13 +14,13 @@
             <esf:property name="Reset-Counter-3#+name" array="false" encrypted="false" type="String">
                 <esf:value>STRING</esf:value>
             </esf:property>
-            <esf:property name="Reset-quad-counter#primary.table" array="false" encrypted="false" type="String">
+            <esf:property name="Reset-Quad-Counter#primary.table" array="false" encrypted="false" type="String">
                 <esf:value>COILS</esf:value>
             </esf:property>
             <esf:property name="Toggle-5#primary.table" array="false" encrypted="false" type="String">
                 <esf:value>DISCRETE_INPUTS</esf:value>
             </esf:property>
-            <esf:property name="Reset-quad-counter#+name" array="false" encrypted="false" type="String">
+            <esf:property name="Reset-Quad-Counter#+name" array="false" encrypted="false" type="String">
                 <esf:value>STRING</esf:value>
             </esf:property>
             <esf:property name="Counter-3#+type" array="false" encrypted="false" type="String">
@@ -29,7 +29,7 @@
             <esf:property name="Toggle-6#memory.address" array="false" encrypted="false" type="Integer">
                 <esf:value>2054</esf:value>
             </esf:property>
-            <esf:property name="Reset-quad-counter#memory.address" array="false" encrypted="false" type="Integer">
+            <esf:property name="Reset-Quad-Counter#memory.address" array="false" encrypted="false" type="Integer">
                 <esf:value>3084</esf:value>
             </esf:property>
             <esf:property name="LED4-RED#+value.type" array="false" encrypted="false" type="String">
@@ -53,7 +53,7 @@
             <esf:property name="LED1#+value.type" array="false" encrypted="false" type="String">
                 <esf:value>BOOLEAN</esf:value>
             </esf:property>
-            <esf:property name="Reset-quad-counter#unit.id" array="false" encrypted="false" type="Integer">
+            <esf:property name="Reset-Quad-Counter#unit.id" array="false" encrypted="false" type="Integer">
                 <esf:value>1</esf:value>
             </esf:property>
             <esf:property name="LED3#primary.table" array="false" encrypted="false" type="String">
@@ -74,7 +74,7 @@
             <esf:property name="Toggle-4#primary.table" array="false" encrypted="false" type="String">
                 <esf:value>DISCRETE_INPUTS</esf:value>
             </esf:property>
-            <esf:property name="Reset-quad-counter#+type" array="false" encrypted="false" type="String">
+            <esf:property name="Reset-Quad-Counter#+type" array="false" encrypted="false" type="String">
                 <esf:value>WRITE</esf:value>
             </esf:property>
             <esf:property name="Toggle-5#+value.type" array="false" encrypted="false" type="String">
@@ -134,7 +134,7 @@
             <esf:property name="Reset-Counter-3#unit.id" array="false" encrypted="false" type="Integer">
                 <esf:value>1</esf:value>
             </esf:property>
-            <esf:property name="Reset-quad-counter#+value.type" array="false" encrypted="false" type="String">
+            <esf:property name="Reset-Quad-Counter#+value.type" array="false" encrypted="false" type="String">
                 <esf:value>BOOLEAN</esf:value>
             </esf:property>
             <esf:property name="LED1#+type" array="false" encrypted="false" type="String">
